@@ -6,14 +6,17 @@ wb = load_workbook('data_analysis_lab.xlsx')
 sheet = wb['Data']
 
 sheet['A'][1:]
-#sheet['B'][1:]
-#sheet['C'][1:]
+sheet['B'][1:]
+sheet['C'][1:]
 
 def getvalue(x):
     return x.value
 
-map(getvalue, sheet['A'][1:])
+year = list(map(getvalue, sheet['A'][1:]))
+temper = list(map(getvalue, sheet['B'][1:]))
+act = list(map(getvalue, sheet['C'][1:]))
 
-pyplot.plot(list_x, list_y, label="Метка")
+pyplot.plot(year, temper, label="Метка")
+pyplot.plot(year, act, label="Метка")
 
 pyplot.show()
