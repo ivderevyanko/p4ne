@@ -38,4 +38,5 @@ def parse_file(new_file):
 list_files = glob.glob("c:/Users/iv.derevyanko/Seafile/p4ne_training/config_files/*.txt")
 
 for file in list_files:
-    pprint(parse_file(file))
+    intf, ip_addr, host_dic, nothing = list(parse_file(file))
+    print(intf, ip_addr, host_dic)
