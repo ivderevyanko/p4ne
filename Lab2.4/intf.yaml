@@ -6,7 +6,7 @@
 
    - name:
      set_fact:
-         packets: "{{ interfaces['stdout'] | regex_findall('RX packets:([0-9]+)') }}"
+         packets: "{{ ifconfig['stdout'] | regex_findall('RX packets:([0-9]+)') }}"
 
    - name: show results
      debug:
